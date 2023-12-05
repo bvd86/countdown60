@@ -95,7 +95,9 @@
       countdownElement.textContent = minutes + ':' + seconds;
 
       if (--timer < 0) {
-        timer = durationInSeconds; // Reset the timer when it reaches zero
+       countdownElement.textContent = '0'; // Set the timer to 0
+      clearInterval(intervalId); // Clear the interval to stop the countdown
+      // Optionally, you can perform additional actions here when the timer reaches zero
       }
     }, 1000);
   }
